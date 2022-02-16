@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[∞]]></content>
+	<tabTrigger>infinite</tabTrigger>
+	<scope>source.pseudocode</scope>
+	<description>infinite symbol</description>
+</snippet>

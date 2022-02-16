@@ -1,0 +1,143 @@
+%YAML 1.2
+---
+name: Pseudocode
+file_extensions:
+  - pseudocode
+  - Pseudocode
+scope: source.pseudocode
+contexts:
+  main:
+    # comment
+    - match: '(//).*$\\n?'
+      scope: comment.line.note.pseudocode
+      captures:
+        1: punctuation.definition.comment.pseudocode
+
+    - match: '\b(For|Do|While|End While|If|End If|Then|Else|End For|End Module|End Function|Times|Loop|End Loop|Select|Case|Sqrt|return|break)\b'
+      scope: keyword.control.pseudocode
+
+    - match: '\b(Integer|Real|String|Boolean)\b'
+      scope: storage.type.pseudocode
+
+    - match: '\b(Constant)\b'
+      scope: storage.modifier.pseudocode
+
+    - match: '\b((0(x|X)[0-9a-fA-F]+)|([0-9]+(\.[0-9]+)?))\b'
+      scope: constant.numeric.pseudocode
+
+    # bool true value
+    - match: 'True|true'
+      scope: constant.language.boolean.true.js
+
+    # bool false value
+    - match: 'False|false|null|undefined'
+      scope: constant.language.boolean.true.js
+
+    # bool no value
+    - match: 'null|undefined|Nan'
+      scope: constant.language.boolean.null.js
+
+    # conditional operator
+    - match: '=|<|>|==|!=|<=|>=|&&|\|\|'
+      scope: keyword.operator.pseudocode
+
+    # numeric operator
+    - match: '\+|-|\*|\\|%|!'
+      scope: keyword.operator.pseudocode
+
+    # written conditional operator
+    - match: '\b(and|or|not|less than|bigger than|is|equal to|equal|in|any|on|of)\b'
+      scope: keyword.control.pseudocode
+
+    # written helper function
+    # - match: '\b(max|min|sum|len)\b'
+    #   scope: keyword.control.pseudocode
+
+    - match: '\b(Display|Input|Declare|Set|Call)\b'
+      scope: keyword.other.pseudocode
+
+    - match: '^\s*(Function)\s+(?=\w.*\s+)(?=[A-Za-z_][A-Za-z0-9_]*\s*\()'
+      captures:
+        1: storage.type.function.pseudocode
+      push:
+        - match: '(?=[A-Za-z_]\w*)(\w*\s*)\('
+          captures:
+            1: punctuation.definition.parameters.end.pseudocode
+          push:
+            - match: ([A-z]\w*)
+              captures:
+                1: constant.numeric.pseudocode
+            - match: '\)'
+              pop: true
+          pop: true
+
+    # function call V1
+    # - match: '\b(\.\w*|\w*)\(.*?\)\s*'
+    #   captures:
+    #     1: variable.function.js
+
+    # function call V2
+    # - match: '\b(\.\w*|\w*)\(.*?\s*'
+    #   captures:
+    #     1: variable.function.js
+
+    # function call V3
+    - match: '\b(\w*)\(.*?\s*'
+      captures:
+        1: variable.function.js
+
+
+    - match: "'"
+      scope: punctuation.definition.string.begin.pseudocode
+      push:
+        - meta_scope: string.quoted.single.pseudocode
+        - match: "'"
+          scope: punctuation.definition.string.begin.pseudocode
+          pop: true
+
+    - match: "\""
+      scope: punctuation.definition.string.begin.pseudocode
+      push:
+        - meta_scope: string.quoted.single.pseudocode
+        - match: "\""
+          scope: punctuation.definition.string.begin.pseudocode
+          pop: true
+
+
+    # - match: '^\s*(Module)\s+(?=[A-Za-z_][A-Za-z0-9_]*\s*\()'
+    #   scope: meta.module.pseudocode
+    #     beginCaptures:
+    #       1: {name: storage.type.module.pseudocode}
+    #     end: '(\))'
+    #     endCaptures:
+    #       1: {name: punctuation.definition.parameters.end.pseudocode}
+    #     patterns:
+    #     - contentName: entity.name.function.pseudocode
+    #       begin: '(?=[A-Za-z_][A-Za-z0-9_]*)'
+    #       end: '(?![A-Za-z0-9_])'
+    #     - contentName: meta.function.parameters.pseudocode
+    #       begin: '(\()'
+    #       beginCaptures:
+    #         1: {name: punctuation.definition.parameters.begin.pseudocode}
+    #       end: '(?=\)\s*)'
+
+    # - match: '^\s*(Function)\s+(?=\w.*\s+)(?=[A-Za-z_][A-Za-z0-9_]*\s*\()'
+    #   scope: meta.function.pseudocode
+    #   beginCaptures:
+    #     1: {name: storage.type.function.pseudocode}
+    #   end: '(\))'
+    #   endCaptures:
+    #     1: {name: punctuation.definition.parameters.end.pseudocode}
+    #   patterns:
+    #   - meta_scope: meta.function.identifier.pseudocode
+    #     begin: '(?=[A-Za-z_][A-Za-z0-9_]*)\s*\('
+    #     end: '(\))'
+    #     beginCaptures:
+    #       1: {name: entity.name.function.pseudocode}
+    #   - meta_scope: meta.function.return-type.pseudocode
+    #     begin: '(?=\w.*\s*\w+\s*[A-Za-z_][A-Za-z0-9_]*\s*\()'
+    #     end: '(?=[A-Za-z_][A-Za-z0-9_]*\s*\()'
+    #     patterns:
+    #     - name: storage.type.pseudocode
+    #       match: \b(Integer|Real|String|Boolean)\b
+

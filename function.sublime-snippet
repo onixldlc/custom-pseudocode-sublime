@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[Function ${1:function}(${2:params})
+	$0]]></content>
+	<tabTrigger>Function</tabTrigger>
+	<scope>source.pseudocode</scope>
+	<description>Function template</description>
+</snippet>
