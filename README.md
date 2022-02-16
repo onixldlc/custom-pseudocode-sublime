@@ -1,7 +1,9 @@
 pseudocode-sublime
 ==================
 
-Sublime settings for Pseudocode definition used at NVCC/GMU
+Sublime settings for Pseudocode ( the syntax highlighting on this sublime setting does not have any standard it just what seems good to me, and i have made this similar to js and even used some js styling in this highlighter ) 
+
+original repo: [pseudocode-sublime](https://github.com/mattva01/pseudocode-sublime)
 
 ## Requirements
 
@@ -9,16 +11,10 @@ Sublime settings for Pseudocode definition used at NVCC/GMU
 
 ## Installation
 
-### Package Control
-1. Run 'Package Control - Add Repository'
-2. In the box put 'https://github.com/mattva01/pseudocode-sublime/'
-3. Run 'Package Control - Install Package'
-4. Select 'pseudocode-sublime' from the list
-
 ### Via Git
 1. In the sublime packages directory run 
 ```
-git clone https://github.com/mattva01/pseudocode-sublime/ Pseudocode
+git clone https://github.com/onixldlc/custom-pseudocode-sublime/ Pseudocode
 ```
 
 ### Manual
@@ -29,4 +25,6 @@ git clone https://github.com/mattva01/pseudocode-sublime/ Pseudocode
 
 ## Usage
 
-Just select Pseudocode from the language list and you are all set. Please report any issues. There are absolutely some bugs and omissions, so please tell me what's important to you.
+You can either select the Pseudocode from the language list or named a file with extension .pseudocode or .Pseudocode. and also feel free to report any issues since im sure there will be alot of edge cases that i have not seen with regex
+
+and also... i dont think i will set this up on the package control since i think any one who need to use this would like to change some stuff in it becs the syntax highlighting does not met any pseudocode standard, its just what i like to see when im working with pseudocode
