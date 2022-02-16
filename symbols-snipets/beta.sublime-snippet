@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[β]]></content>
+	<tabTrigger>beta</tabTrigger>
+	<scope>source.pseudocode</scope>
+	<description>beta symbol</description>
+</snippet>

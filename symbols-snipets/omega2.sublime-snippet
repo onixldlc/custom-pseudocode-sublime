@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[ω]]></content>
+	<tabTrigger>omega</tabTrigger>
+	<scope>source.pseudocode</scope>
+	<description>omega symbol</description>
+</snippet>

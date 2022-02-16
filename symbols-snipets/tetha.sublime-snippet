@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[θ]]></content>
+	<tabTrigger>tetha</tabTrigger>
+	<scope>source.pseudocode</scope>
+	<description>tetha symbol</description>
+</snippet>

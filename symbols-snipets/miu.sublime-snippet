@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[μ]]></content>
+	<tabTrigger>mu</tabTrigger>
+	<scope>source.pseudocode</scope>
+	<description>mu symbol</description>
+</snippet>

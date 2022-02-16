@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[Δ]]></content>
+	<tabTrigger>delta</tabTrigger>
+	<scope>source.pseudocode</scope>
+	<description>delta symbol</description>
+</snippet>

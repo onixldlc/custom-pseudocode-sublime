@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[π]]></content>
+	<tabTrigger>pi</tabTrigger>
+	<scope>source.pseudocode</scope>
+	<description>pi symbol</description>
+</snippet>

@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[ψ]]></content>
+	<tabTrigger>psi</tabTrigger>
+	<scope>source.pseudocode</scope>
+	<description>psi symbol</description>
+</snippet>
