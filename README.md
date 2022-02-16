@@ -28,4 +28,4 @@ git clone https://github.com/onixldlc/custom-pseudocode-sublime/ Pseudocode
 
 You can either select the Pseudocode from the language list or named a file with extension .pseudocode or .Pseudocode. and also feel free to report any issues since im sure there will be alot of edge cases that i have not seen with regex
 
-and also... i dont think i will set this up on the package control since i think any one who need to use this would like to change some stuff in it becs the syntax highlighting does not met any pseudocode standard, its just what i like to see when im working with pseudocode
+and also... i dont think i will set this up on the package control since i think any one who need to use this would like to change some stuff before using it becs the syntax highlighting does not met any pseudocode standard, its just what i like to see when im working with pseudocode
